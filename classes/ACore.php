@@ -17,9 +17,44 @@
 			include 'header.php';
 		}
 
+		protected function get_left_bar(){
+			$query = "SELECT id_category, name_category FROM category";
+			$result = mysql_query($query);
+
+			echo $query.'<br>&& '.$result ;
+			if (!$result){
+				exit ("@@@@@".mysql_error());
+			}
+			$row = array();
+
+
+			echo '<div class="sidebar">
+      <!--/search -->
+      <div class="search"></div>
+      <!--/search -->
+
+        <div class="gadget">
+          <h2>Меню</h2>
+          <div class="clr"></div>
+           <ul class="sb_menu">';
+
+           for ($i=0; $i<mysql_num_rows($result); $i++){
+           		$row=mysql_fetch_array($result, MYSql_assoc);
+           		printf();
+           }
+              /*  <li><a href="#">Фурнитура</a></li>
+                <li><a href="#">Материалы</a></li>
+                <li><a href="calculator.html">Калькулятор цены кухни<br/><img src="images/132.png"  alt="" title="Калькулятор" /></a>
+                </li>*/
+         echo ' </ul>
+        </div>';
+       
+		}
 
 		public function get_body(){
 			$this->get_header();
+			$this->get_left_bar();
+
 		} 
 	}
 ?>

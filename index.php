@@ -1,5 +1,5 @@
-<?php
-	header("Content-Type:text/html;charser=UTF8");
+﻿<?php
+	//header("Content-Type:text/html;charser=UTF8");
 
 	require_once ("config.php");
 	require_once ("classes/ACore.php");
