@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Сен 18 2017 г., 22:17
+-- Время создания: Сен 19 2017 г., 17:06
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.6.30
 
@@ -19,6 +19,35 @@ SET time_zone = "+00:00";
 --
 -- База данных: `mebel`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `category`
+--
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `id_category` tinyint(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name_category` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_category`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+
+--
+-- Дамп данных таблицы `category`
+--
+
+INSERT INTO `category` (`id_category`, `name_category`) VALUES
+(1, 'Фурнитура'),
+(2, 'Материалы'),
+(3, 'Калькулятор цены'),
+(4, 'Шкафы'),
+(5, 'Кухни'),
+(6, 'Прихожие'),
+(7, 'Гостинные'),
+(8, 'Детские'),
+(9, 'Спальни'),
+(10, 'Офисная мебель'),
+(11, 'Мебель: ');
 
 -- --------------------------------------------------------
 
@@ -45,6 +74,23 @@ INSERT INTO `menu` (`id_menu`, `name_menu`, `text_menu`) VALUES
 (5, 'Контакты', '<div class="mainbar">\r\n        <div class="article">\r\n          <h2><span>Контакты</span></h2><div class="clr"></div>\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac magna a turpis ornare aliquam id hendrerit nisl. Pellentesque adipiscing blandit mollis. Curabitur varius est et sem rhoncus et pretium massa molestie.</p>\r\n        </div>\r\n        <div class="article">\r\n          <p class="contact_info"> <span>Адрес:</span> 1458 Москва, Россия<br />\r\n          <span>Телефон:</span> +123-1234-5678<br />\r\n          <span>FAX:</span> +458-4578<br />\r\n          <span>Другие:</span> +301 - 0125 - 01258<br />\r\n          <span>E-mail:</span> <a href="#">mail@mail.ru</a> \r\n<img src="images/img_3.jpg" width="613" height="193" alt="image" /></p>\r\n         \r\n        </div>\r\n      </div>\r\n     '),
 (6, 'О нас', 'Какая то инфрмация'),
 (7, 'Доставка', 'Информация о цене и географии доставки мебели');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `statti`
+--
+
+CREATE TABLE IF NOT EXISTS `statti` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `discription` text NOT NULL,
+  `text` text NOT NULL,
+  `data` date NOT NULL,
+  `img_src` varchar(255) NOT NULL,
+  `cat` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
